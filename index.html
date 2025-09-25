@@ -4,10 +4,11 @@
 
   <meta charset="utf-8">
   <meta name="description"
-        content="RAD: Training an End-to-End Driving Policy via Large-Scale 3DGS-based Reinforcement Learning">
+        content="ResAD: Normalized Residual Trajectory Modeling for
+End-to-End Autonomous Driving">
   <meta name="keywords" content="Gaussians, Dynamic, Rendering, Splatting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RAD: Training an End-to-End Driving Policy via Large-Scale 3DGS-based Reinforcement Learning</title>
+  <title>ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -52,60 +53,46 @@
           <!-- <h1 class="title is-1 publication-title">RAD: Training an End-to-End Driving Policy via Large-Scale</h1>
           <h1 class="title is-1 publication-title"> 3DGS-based Reinforcement Learning</h1> -->
           <h1 class="title is-1 publication-title" style="white-space: nowrap;">
-            RAD: Training an End-to-End Driving Policy via Large-Scale
+            ResAD: Normalized Residual Trajectory Modeling for
           </h1>
           <h1 class="title is-1 publication-title" style="white-space: nowrap;">
-            3DGS-based Reinforcement Learning
+            End-to-End Autonomous Driving
           </h1>
           
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://github.com/hustvl/VAD">Hao Gao</a><sup>1,◇</sup>,
+              <a href="https://scholar.google.com/citations?user=zyN6ekkAAAAJ&hl=en">Zhiyu Zheng</a><sup>1,◇</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=PIeNN2gAAAAJ&hl=en&oi=ao">Shaoyu Chen</a><sup>1,2,†</sup>,</span>
+              <a href="https://scholar.google.com/citations?user=PIeNN2gAAAAJ&hl=en&oi=ao">Shaoyu Chen</a><sup>2,†</sup>,</span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=UlDxGP0AAAAJ&hl=en">Bo Jiang</a><sup>1,◇</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=en&user=rUBdh_sAAAAJ">Bencheng Liao</a><sup>1,◇</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=AWZwS8AAAAAJ&hl=zh-CN&oi=ao">Yiang Shi</a><sup>1,◇</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=zh-CN&user=CrK4w4UAAAAJ&view_op=list_works&sortby=pubdate">Xiaoyang Guo</a><sup>2</sup>,
-            </span>
-            <p></p>
-            <span class="author-block">
-              <a href="https://github.com/hustvl/VAD">Yuechuan Pu</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://github.com/hustvl/VAD">Haoran Yin</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://github.com/hustvl/VAD">Xiangyu Li</a><sup>2</sup>,
-            </span>
+              <a href="https://github.com/hustvl/VAD">Haoran Yin</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://github.com/hustvl/VAD">Xinbang Zhang</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://github.com/hustvl/VAD">Ying Zhang</a><sup>2</sup>,
-            </span>
-            <p></p>
+              <a href="https://scholar.google.com/citations?user=do_ngRUAAAAJ&hl=en">Jialv Zou</a><sup>1,◇</sup>,
+            <!-- </span>
+            <span> <a href=""></a> </span> -->
+            <!-- <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=CrK4w4UAAAAJ&view_op=list_works&sortby=pubdate">Xiaoyang Guo</a><sup>2</sup>, -->
+
             <span class="author-block">
-              <a href="http://eic.hust.edu.cn/professor/liuwenyu/">Wenyu Liu</a><sup>1</sup>,
+              <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>3</sup>,
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=en">Qian Zhang</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>1,✉</sup>
+              <a href="https://scholar.google.com/citations?user=BLKHwNwAAAAJ&hl=en">Lefei Zhang</a><sup>1,✉</sup>
             </span>
+
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Huazhong University of Science &amp; Technology</span>
+            <span class="author-block"><sup>1</sup>Wuhan University</span>
             <span class="author-block"><sup>2</sup>Horizon Robotics</span>
+            <span class="author-block"><sup>3</sup>Huazhong University of Science &amp; Technology</span>
             <p></p>
             <span class="author-block"><sup>◇</sup>Intern of Horizon Robotics.</span>
             <span class="author-block"><sup>†</sup>Project Lead.</span>
@@ -124,6 +111,17 @@
                   <span>Paper</span>
                 </a>
               </span>
+              
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-code"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                </a>
+              </span>
+
             </div>
 
           </div>
@@ -138,7 +136,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Existing end-to-end autonomous driving (AD) algorithms typically follow the Imitation Learning (IL) paradigm, which faces challenges such as causal confusion and the open-loop gap. In this work, we establish a 3DGS-based closed-loop Reinforcement Learning (RL) training paradigm. By leveraging 3DGS techniques, we construct a photorealistic digital replica of the real physical world, enabling the AD policy to extensively explore the state space and learn to handle out-of-distribution scenarios through large-scale trial and error. To enhance safety, we design specialized rewards that guide the policy to effectively respond to safety-critical events and understand real-world causal relationships. For better alignment with human driving behavior, IL is incorporated into RL training as a regularization term. We introduce a closed-loop evaluation benchmark consisting of diverse, previously unseen 3DGS environments. Compared to IL-based methods, RAD achieves stronger performance in most closed-loop metrics, especially 3x lower collision rate.<br><br><br>
+           End-to-end autonomous driving (E2EAD) systems, which learn to predict future trajectories directly from sensor data, are fundamentally challenged by the inherent spatio-temporal imbalance of trajectory data. 
+          This imbalance creates a significant optimization burden, causing models to learn spurious correlations instead of causal inference, while also prioritizing uncertain, distant predictions, thereby compromising immediate safety.
+          To address these issues, we propose <b><i>ResAD</i></b>, a novel <b>Normalized Residual Trajectory Modeling</b> framework. 
+          Instead of predicting the future trajectory directly, our approach reframes the learning task to predict the <b>residual</b> deviation from a deterministic <b>inertial reference</b>. The inertial reference serves as a counterfactual, forcing the model to move beyond simple pattern recognition and instead identify the underlying causal factors (<i>e.g.</i>, traffic rules, obstacles) that necessitate deviations from a default, inertially-guided path.
+          To deal with the optimization imbalance caused by uncertain, long-term horizons, <b><i>ResAD</i></b> further incorporates Point-wise Normalization of the predicted residual. It re-weights the optimization objective, preventing large-magnitude errors associated with distant, uncertain waypoints from dominating the learning signal.
+          Extensive experiments validate the effectiveness of our framework. On the NAVSIM benchmark, <b><i>ResAD</i></b> achieves a state-of-the-art PDMS of 88.6 using a vanilla diffusion policy with only two denoising steps, demonstrating that our approach significantly simplifies the learning task and improves model performance. The code will be released.
+<br><br><br>
           </p>
         </div>
       </div>
@@ -147,16 +151,16 @@
 
 </section>
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-2" style="white-space: nowrap;">Closed-loop Evaluation in 3DGS-based Environments</h2>
     <video controls width="100%">
       <source src="./static/videos/rad_long.mp4" type="video/mp4">
     </video>
   </div>
-</section>
+</section> -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-2">Framework</h2>
     <div class="content has-text-justified">
@@ -164,7 +168,7 @@
     </div>
     <img src="./static/images/framework.png">
   </div>
-</section>
+</section> -->
 
 <style>
   .container.fixed-width {
@@ -204,269 +208,19 @@
   </style>
 </head>
 
-<div class="container fixed-width">
-  <div class="title-container"> 
-    <h2 class="title is-2">IL-only Policy vs RAD: Closed-loop Evaluation</h2> 
-    <div style="height: 3px;"></div>
-    <p class="subtitle is-5">Left: IL-only Policy| Right: RAD</p>  
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-    <h3 class="title is-4 has-text-centered">Clip 1 : Detour; Right-turn</h3>
-    <div class="columns is-multiline is-variable is-2 is-centered">  
-      <div class="column is-half">  
-        <div class="content">
-          <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>  
-          <video class="video-container" autoplay controls muted loop playsinline>
-            <source src="./static/videos/clip_1726267373699-IL.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-half">  
-        <div class="content">
-          <p class="content is-5 has-text-left">RAD: Success</p>  
-          <video class="video-container" autoplay controls muted loop playsinline>
-            <source src="./static/videos/clip_1726267373699-RAD.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div style="height: 10px;"></div>
-  
-  <div class="container background-container">
-    <h3 class="title is-4 has-text-centered">Clip 2 : Yield to Pedestrians</h3>
-    <div class="columns is-multiline is-variable is-2 is-centered">
-      <!-- Row 2 -->
-      <div class="column is-half">
-        <div class="content">
-          <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-          <video class="video-container" autoplay controls muted loop playsinline>
-            <source src="./static/videos/clip_1726273717199-IL.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <div class="column is-half">
-        <div class="content">
-          <p class="content is-5 has-text-left">RAD: Success</p>
-          <video class="video-container" autoplay controls muted loop playsinline>
-            <source src="./static/videos/clip_1726273717199-RAD.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div style="height: 10px;"></div>
-  
-  <div class="container background-container">
-    <h3 class="title is-4 has-text-centered">Clip 3 : U-turn</h3>
-    <div class="columns is-multiline is-variable is-2 is-centered">
-        <!-- Row 3 -->
-        <div class="column is-half">
-            <div class="content">
-                <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                <video class="video-container" autoplay controls muted loop playsinline>
-                    <source src="./static/videos/clip_1726300101299-IL.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="content">
-                <p class="content is-5 has-text-left">RAD: Success</p>
-                <video class="video-container" autoplay controls muted loop playsinline>
-                    <source src="./static/videos/clip_1726300101299-RAD.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div style="height: 10px;"></div>
-  
-  <div class="container background-container">
-    <h3 class="title is-4 has-text-centered">Clip 4 : Crawl in Dense Traffic</h3>
-    <div class="columns is-multiline is-variable is-2 is-centered">
-        <!-- Row 4 -->
-        <div class="column is-half">
-            <div class="content">
-                <p class="content is-5 has-text-left">IL-only Policy: Position Deviation</p>
-                <video class="video-container" autoplay controls muted loop playsinline>
-                    <source src="./static/videos/clip_1726710854599-IL.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="content">
-                <p class="content is-5 has-text-left">RAD: Success</p>
-                <video class="video-container" autoplay controls muted loop playsinline>
-                    <source src="./static/videos/clip_1726710854599-RAD.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 5 : Unprotected Left-turn</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 5 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726362331499-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726362331499-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 6 : Crawl in Dense Traffic</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 6 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726613460899-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726613460899-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 7 : Unprotected Left-turn</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 7 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726923764200-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726923764200-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 8 : Detour; Traverse Narrow Lane</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 8 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726267968399-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726267968399-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 9 : Unprotected Left-turn</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 9 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Dynamic Collision</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726723784999-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726723784999-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div style="height: 10px;"></div>
-
-  <div class="container background-container">
-      <h3 class="title is-4 has-text-centered">Clip 10 : Stop-and-Start Following</h3>
-      <div class="columns is-multiline is-variable is-2 is-centered">
-          <!-- Row 10 -->
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">IL-only Policy: Heading Deviation</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726268262099-IL.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-          <div class="column is-half">
-              <div class="content">
-                  <p class="content is-5 has-text-left">RAD: Success</p>
-                  <video class="video-container" autoplay controls muted loop playsinline>
-                      <source src="./static/videos/clip_1726268262099-RAD.mp4" type="video/mp4">
-                  </video>
-              </div>
-          </div>
-      </div>
-  </div>
-
-</div>
-
 <div style="margin-top: 30px;"></div>
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3">BibTeX</h2>
-    <pre><code>@article{RAD,
+    <pre><code>@article{ResAD,
   title={RAD: Training an End-to-End Driving Policy via Large-Scale 3DGS-based Reinforcement Learning},
   author={Gao, Hao and Chen, Shaoyu and Jiang, Bo and Liao, Bencheng and Shi, Yiang and Guo, Xiaoyang and Pu, Yuechuan and Yin, Haoran and Li, Xiangyu and Zhang, Xinbang and Zhang, Ying and Liu, Wenyu and Zhang, Qian and Wang, Xinggang},
   journal={arXiv preprint arXiv:2502.13144},
   year={2025}
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 <footer class="footer">
   <div class="container">
@@ -475,9 +229,9 @@
          href="https://arxiv.org/abs/2310.08528">
         <i class="fas fa-file-pdf"></i>
       </a>  -->
-      <a class="icon-link" href="https://github.com/hustvl" class="external-link" disabled>
+      <!-- <a class="icon-link" href="https://github.com/hustvl" class="external-link" disabled>
         <i class="fab fa-github"></i>
-      </a>
+      </a> -->
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
