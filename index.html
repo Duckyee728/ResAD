@@ -35,7 +35,7 @@ End-to-End Autonomous Driving">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/hust.png">
+  <link rel="icon" href="./static/images/WHU.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -72,11 +72,9 @@ End-to-End Autonomous Driving">
             </span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=do_ngRUAAAAJ&hl=en">Jialv Zou</a><sup>1,◇</sup>,
-            <!-- </span>
-            <span> <a href=""></a> </span> -->
-            <!-- <span class="author-block">
-              <a href="https://scholar.google.com/citations?hl=zh-CN&user=CrK4w4UAAAAJ&view_op=list_works&sortby=pubdate">Xiaoyang Guo</a><sup>2</sup>, -->
-
+            <!-- <p></p> -->
+            </span>
+            <p></p>
             <span class="author-block">
               <a href="https://xwcv.github.io/">Xinggang Wang</a><sup>3</sup>,
             </span>
@@ -103,7 +101,7 @@ End-to-End Autonomous Driving">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2502.13144.pdf"
+                <a href="static/images/ResAD_ArXiv.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -129,7 +127,7 @@ End-to-End Autonomous Driving">
       </div>
     </div>
   </div>
-
+<!-- 
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -147,28 +145,285 @@ End-to-End Autonomous Driving">
         </div>
       </div>
     </div>
+  </div> -->
+
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered">
+      <div class="column is-8">
+        <div class="content has-text-justified">
+          <p>
+           End-to-end autonomous driving (E2EAD) systems, which learn to predict future trajectories directly from sensor data, are fundamentally challenged by the inherent spat-temporal imbalance of trajectory data. 
+          This imbalance creates a significant optimization burden, causing models to learn spurious correlations instead of causal inference, while also prioritizing uncertain, distant predictions, thereby compromising immediate safety.
+          To address these issues, we propose <b><i>ResAD</i></b>, a novel <b>Normalized Residual Trajectory Modeling</b> framework. 
+          Instead of predicting the future trajectory directly, our approach reframes the learning task to predict the <b>residual</b> deviation from a deterministic <b>inertial reference</b>. The inertial reference serves as a counterfactual, forcing the model to move beyond simple pattern recognition and instead identify the underlying causal factors (<i>e.g.</i>, traffic rules, obstacles) that necessitate deviations from a default, inertially-guided path.
+          To deal with the optimization imbalance caused by uncertain, long-term horizons, <b><i>ResAD</i></b> further incorporates Point-wise Normalization of the predicted residual. It re-weights the optimization objective, preventing large-magnitude errors associated with distant, uncertain waypoints from dominating the learning signal.
+          Extensive experiments validate the effectiveness of our framework. On the NAVSIM benchmark, <b><i>ResAD</i></b> achieves a state-of-the-art PDMS of 88.6 using a vanilla diffusion policy with only two denoising steps, demonstrating that our approach significantly simplifies the learning task and improves model performance. The code will be released.
+          </p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <img src="./static/images/teaser.png" alt="Teaser image for ResAD"/>
+      </div>
+    </div>
   </div>
+  </section>
+
+
 
 </section>
 
-<!-- <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-2" style="white-space: nowrap;">Closed-loop Evaluation in 3DGS-based Environments</h2>
+    <h2 class="title is-2" style="white-space: nowrap;">Real-world Demonstration</h2>
     <video controls width="100%">
-      <source src="./static/videos/rad_long.mp4" type="video/mp4">
+      <source src="./static/videos/real_world_demonstration.mp4" type="video/mp4">
     </video>
   </div>
-</section> -->
+</section>
 
-<!-- <section class="section">
+
+<section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-2">Framework</h2>
     <div class="content has-text-justified">
-      RAD takes a three-stage training paradigm. In the perception pre-training, ground-truths of map and agent are used to guide instance-level tokens to encode corresponding information. In the planning pre-training stage, large-scale driving demonstrations are used to initialize the action distribution. In the reinforced post-training stage, RL and IL synergistically fine-tune the AD policy.
+      The proposed <b><i>ResAD</i></b> framework. Multi-view images and LiDAR data are first processed and fused by a feature interaction encoder. We generate an inertial reference from the ego-vehicle's state and perturb it into a cluster to ensure robustness and enable multi-modal predictions. Finally, diffusion decoders, conditioned on this reference cluster, merge the encoded features via cross-attention to output the planned trajectories. 
+      <!-- RAD takes a three-stage training paradigm. In the perception pre-training, ground-truths of map and agent are used to guide instance-level tokens to encode corresponding information. In the planning pre-training stage, large-scale driving demonstrations are used to initialize the action distribution. In the reinforced post-training stage, RL and IL synergistically fine-tune the AD policy. -->
     </div>
-    <img src="./static/images/framework.png">
+    <img src="./static/images/resad_frame.png">
   </div>
-</section> -->
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+    <h2 class="title is-2">Quantitative Comparison</h2>
+
+    <div>
+      <h4 class="title is-6 has-text-centered">Performance on the NAVSIM v1 NAVTEST</h4>
+      <div style="display: flex; justify-content: center;">
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable is-narrow">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th><strong>NC</strong> ↑</th>
+                <th><strong>DAC</strong> ↑</th>
+                <th><strong>EP</strong> ↑</th>
+                <th><strong>TTC</strong> ↑</th>
+                <th><strong>C</strong> ↑</th>
+                <th><strong>PDMS</strong> ↑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transfuser</td>
+                <td>97.7</td>
+                <td>92.8</td>
+                <td>79.2</td>
+                <td>92.8</td>
+                <td><strong>100</strong></td>
+                <td>84.0</td>
+              </tr>
+              <tr>
+                <td>UniAD</td>
+                <td>97.8</td>
+                <td>91.9</td>
+                <td>78.8</td>
+                <td>92.9</td>
+                <td><strong>100</strong></td>
+                <td>83.4</td>
+              </tr>
+              <tr>
+                <td>VADv2</td>
+                <td>97.2</td>
+                <td>89.1</td>
+                <td>76.0</td>
+                <td>91.6</td>
+                <td><strong>100</strong></td>
+                <td>80.9</td>
+              </tr>
+              <tr>
+                <td>Hydra-MDP++</td>
+                <td>97.6</td>
+                <td>96.0</td>
+                <td>80.4</td>
+                <td>93.1</td>
+                <td><strong>100</strong></td>
+                <td>86.6</td>
+              </tr>
+              <tr>
+                <td>GoalFlow</td>
+                <td><u>98.3</u></td>
+                <td>93.8</td>
+                <td>79.8</td>
+                <td>94.3</td>
+                <td><strong>100</strong></td>
+                <td>85.7</td>
+              </tr>
+              <tr>
+                <td>DiffusionDrive</td>
+                <td>98.2</td>
+                <td>96.2</td>
+                <td><u>82.2</u></td>
+                <td>94.7</td>
+                <td><strong>100</strong></td>
+                <td>88.1</td>
+              </tr>
+              <tr>
+                <td>WoTE</td>
+                <td><strong>98.5</strong></td>
+                <td><u>96.8</u></td>
+                <td>81.9</td>
+                <td><strong>94.9</strong></td>
+                <td><u>99.9</u></td>
+                <td><u>88.3</u></td>
+              </tr>
+              <tr>
+                <td><strong>ResAD</strong></td>
+                <td>98.0</td>
+                <td><strong>97.3</strong></td>
+                <td><strong>82.5</strong></td>
+                <td>94.2</td>
+                <td><strong>100</strong></td>
+                <td><strong>88.6</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem;"></div>
+
+    <div>
+      <h4 class="title is-6 has-text-centered">Performance on the NAVSIM v2 NAVTEST Benchmark with Extended Metrics.</h4>
+      <div style="display: flex; justify-content: center;">
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-hoverable is-narrow">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th><strong>NC ↑</strong></th>
+                <th><strong>DAC ↑</strong></th>
+                <th><strong>DDC ↑</strong></th>
+                <th><strong>TL ↑</strong></th>
+                <th><strong>EP ↑</strong></th>
+                <th><strong>TTC ↑</strong></th>
+                <th><strong>LK ↑</strong></th>
+                <th><strong>HC ↑</strong></th>
+                <th><strong>EC ↑</strong></th>
+                <th><strong>EPDMS ↑</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ego Status MLP</td>
+                <td>93.1</td>
+                <td>77.9</td>
+                <td>92.7</td>
+                <td>99.6</td>
+                <td>86.0</td>
+                <td>91.5</td>
+                <td>89.4</td>
+                <td>98.3</td>
+                <td>85.4</td>
+                <td>64.0</td>
+              </tr>
+              <tr>
+                <td>Transfuser</td>
+                <td>96.9</td>
+                <td>89.9</td>
+                <td>97.8</td>
+                <td><u>99.7</u></td>
+                <td>87.1</td>
+                <td>95.4</td>
+                <td>92.7</td>
+                <td>98.3</td>
+                <td>87.2</td>
+                <td>76.7</td>
+              </tr>
+              <tr>
+                <td>HydraMDP++</td>
+                <td>97.2</td>
+                <td><strong>97.5</strong></td>
+                <td><u>99.4</u></td>
+                <td>99.6</td>
+                <td>83.1</td>
+                <td>96.5</td>
+                <td>94.4</td>
+                <td>98.2</td>
+                <td>70.9</td>
+                <td>81.4</td>
+              </tr>
+              <tr>
+                <td>DriveSuprim</td>
+                <td>97.5</td>
+                <td>96.5</td>
+                <td><u>99.4</u></td>
+                <td>99.6</td>
+                <td><strong>88.4</strong></td>
+                <td>96.6</td>
+                <td>95.5</td>
+                <td>98.3</td>
+                <td>77.0</td>
+                <td>83.1</td>
+              </tr>
+              <tr>
+                <td>ARTEMIS</td>
+                <td><strong>98.3</strong></td>
+                <td>95.1</td>
+                <td>98.6</td>
+                <td><strong>99.8</strong></td>
+                <td>81.5</td>
+                <td><strong>97.4</strong></td>
+                <td>96.5</td>
+                <td>98.3</td>
+                <td>-</td>
+                <td>83.1</td>
+              </tr>
+              <tr>
+                <td>DiffusionDrive</td>
+                <td><u>98.2</u></td>
+                <td>95.9</td>
+                <td><u>99.4</u></td>
+                <td><strong>99.8</strong></td>
+                <td>87.5</td>
+                <td><u>97.3</u></td>
+                <td><u>96.8</u></td>
+                <td>98.3</td>
+                <td><u>87.7</u></td>
+                <td><u>84.5</u></td>
+              </tr>
+              <tr>
+                <td><strong>ResAD</strong></td>
+                <td>97.8</td>
+                <td><u>97.2</u></td>
+                <td><strong>99.5</strong></td>
+                <td><strong>99.8</strong></td>
+                <td><u>88.2</u></td>
+                <td>96.9</td>
+                <td><strong>97.0</strong></td>
+                <td><strong>98.4</strong></td>
+                <td><strong>88.2</strong></td>
+                <td><strong>85.5</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+</section>
+
+
 
 <style>
   .container.fixed-width {
@@ -209,6 +464,8 @@ End-to-End Autonomous Driving">
 </head>
 
 <div style="margin-top: 30px;"></div>
+
+
 
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
